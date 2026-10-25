@@ -1,0 +1,47 @@
+{
+  "name": "project-management",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "slides:guids": "node scripts/ensure-slide-guids.mjs",
+    "slides:guids:check": "node scripts/ensure-slide-guids.mjs --check",
+    "prebuild:site": "npm run slides:guids:check",
+    "build:site": "node scripts/build-docker-site.mjs",
+    "prebuild": "npm run slides:guids:check",
+    "build": "node scripts/build-docker-site.mjs",
+    "dev-33-exercises-1": "slidev --open week-33-exercises.1.md",
+    "dev-33-exercises-2": "slidev --open week-33-exercises.2.md",
+    "dev-33-demo": "slidev --open week-33-demo.1.md",
+    "dev-35-1": "slidev --open week-35.1.md",
+    "dev-35-2": "slidev --open week-35.2.md",
+    "dev-36": "slidev --open week-36.md",
+    "dev-40": "slidev --open week-40.md",
+    "dev-40-da": "slidev --open week-40.da.md",
+    "dev-41": "slidev --open week-41.md",
+    "dev-41-da": "slidev --open week-41.da.md",
+    "dev-43": "slidev --open week-43.md",
+    "dev-43-da": "slidev --open week-43.da.md",
+    "dev-38": "slidev --open week-38.md",
+    "dev-37": "slidev --open week-37.md",
+    "dev-37-da": "slidev --open week-37.da.md",
+    "dev-38-da": "slidev --open week-38.da.md",
+    "dev-36-da": "slidev --open week-36-da.md",
+    "dev-36-exercises": "slidev --open week-36.exercises.md",
+    "dev-36-exercises-da": "slidev --open week-36.exercises-da.md",
+    "dev-36-exercises.answers": "slidev --open week-36.exercises.answers.md",
+    "dev-35-1-da": "slidev --open week-35.1-da.md",
+    "dev-35-2-da": "slidev --open week-35.2-da.md",
+    "dev-vm-guide": "node scripts/dev-vm-guide.mjs"
+  },
+  "dependencies": {
+    "@slidev/cli": "^52.8.0",
+    "@slidev/theme-default": "latest",
+    "@slidev/theme-seriph": "latest",
+    "sass-embedded": "^1.97.3",
+    "vue": "^3.5.24"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.3",
+    "vite": "^7.3.1"
+  }
+}

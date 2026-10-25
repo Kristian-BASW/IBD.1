@@ -1,0 +1,9 @@
+services:
+  slides:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: datasikkerhed-slides:local
+    ports:
+      - "8080:80"
+    restart: unless-stopped

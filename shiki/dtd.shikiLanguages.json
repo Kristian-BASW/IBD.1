@@ -1,0 +1,195 @@
+{
+  "name": "DTD",
+  "scopeName": "source.dtd",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#doctype" },
+    { "include": "#element" },
+    { "include": "#attlist" },
+    { "include": "#entity" },
+    { "include": "#notation" },
+    { "include": "#parameter-entities" },
+    { "include": "#pcdata" },
+    { "include": "#punctuation" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.block.dtd",
+          "begin": "<!--",
+          "end": "-->"
+        }
+      ]
+    },
+    "doctype": {
+      "patterns": [
+        {
+          "name": "meta.declaration.doctype.dtd",
+          "begin": "<!DOCTYPE\\b",
+          "beginCaptures": {
+            "0": { "name": "keyword.control.dtd" }
+          },
+          "end": ">",
+          "endCaptures": {
+            "0": { "name": "punctuation.definition.tag.dtd" }
+          },
+          "patterns": [
+            {
+              "name": "entity.name.type.dtd",
+              "match": "\\b[A-Za-z_:][\\w:.-]*\\b"
+            },
+            {
+              "name": "string.quoted.double.dtd",
+              "begin": "\"",
+              "end": "\""
+            },
+            {
+              "name": "punctuation.definition.bracket.dtd",
+              "match": "[\\[\\]]"
+            }
+          ]
+        }
+      ]
+    },
+    "element": {
+      "patterns": [
+        {
+          "name": "meta.declaration.element.dtd",
+          "begin": "<!ELEMENT\\b",
+          "beginCaptures": {
+            "0": { "name": "keyword.control.dtd" }
+          },
+          "end": ">",
+          "endCaptures": {
+            "0": { "name": "punctuation.definition.tag.dtd" }
+          },
+          "patterns": [
+            {
+              "name": "entity.name.type.dtd",
+              "match": "\\b[A-Za-z_:][\\w:.-]*\\b"
+            },
+            {
+              "name": "constant.language.dtd",
+              "match": "#PCDATA|EMPTY|ANY"
+            },
+            {
+              "name": "keyword.operator.dtd",
+              "match": "[|,?+*()]"
+            }
+          ]
+        }
+      ]
+    },
+    "attlist": {
+      "patterns": [
+        {
+          "name": "meta.declaration.attlist.dtd",
+          "begin": "<!ATTLIST\\b",
+          "beginCaptures": {
+            "0": { "name": "keyword.control.dtd" }
+          },
+          "end": ">",
+          "endCaptures": {
+            "0": { "name": "punctuation.definition.tag.dtd" }
+          },
+          "patterns": [
+            {
+              "name": "entity.name.type.dtd",
+              "match": "\\b[A-Za-z_:][\\w:.-]*\\b"
+            },
+            {
+              "name": "constant.language.dtd",
+              "match": "#IMPLIED|#REQUIRED|#FIXED"
+            },
+            {
+              "name": "string.quoted.double.dtd",
+              "begin": "\"",
+              "end": "\""
+            }
+          ]
+        }
+      ]
+    },
+    "entity": {
+      "patterns": [
+        {
+          "name": "meta.declaration.entity.dtd",
+          "begin": "<!ENTITY\\b",
+          "beginCaptures": {
+            "0": { "name": "keyword.control.dtd" }
+          },
+          "end": ">",
+          "endCaptures": {
+            "0": { "name": "punctuation.definition.tag.dtd" }
+          },
+          "patterns": [
+            {
+              "name": "entity.name.type.dtd",
+              "match": "\\b[A-Za-z_:][\\w:.-]*\\b"
+            },
+            {
+              "name": "string.quoted.double.dtd",
+              "begin": "\"",
+              "end": "\""
+            }
+          ]
+        }
+      ]
+    },
+    "notation": {
+      "patterns": [
+        {
+          "name": "meta.declaration.notation.dtd",
+          "begin": "<!NOTATION\\b",
+          "beginCaptures": {
+            "0": { "name": "keyword.control.dtd" }
+          },
+          "end": ">",
+          "endCaptures": {
+            "0": { "name": "punctuation.definition.tag.dtd" }
+          },
+          "patterns": [
+            {
+              "name": "entity.name.type.dtd",
+              "match": "\\b[A-Za-z_:][\\w:.-]*\\b"
+            },
+            {
+              "name": "string.quoted.double.dtd",
+              "begin": "\"",
+              "end": "\""
+            }
+          ]
+        }
+      ]
+    },
+    "parameter-entities": {
+      "patterns": [
+        {
+          "name": "variable.parameter.entity.dtd",
+          "match": "%[A-Za-z_:][\\w:.-]*;"
+        }
+      ]
+    },
+    "pcdata": {
+      "patterns": [
+        {
+          "name": "constant.language.dtd",
+          "match": "#PCDATA"
+        }
+      ]
+    },
+    "punctuation": {
+      "patterns": [
+        {
+          "name": "punctuation.definition.tag.dtd",
+          "match": "<!|>"
+        },
+        {
+          "name": "punctuation.definition.group.dtd",
+          "match": "[\\[\\]()|,]"
+        }
+      ]
+    }
+  }
+}
